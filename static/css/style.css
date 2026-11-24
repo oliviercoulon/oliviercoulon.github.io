@@ -150,9 +150,12 @@ ol.refs { list-style: none; margin: 0; padding: 0; }
 ol.refs li { display: grid; grid-template-columns: 40px minmax(0, 1fr) 22px; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--rule-2); font-size: 15px; color: var(--fg-2); }
 ol.refs .n { color: #a2a2a2; font-size: 13px; font-variant-numeric: tabular-nums; padding-top: 2px; }
 ol.refs .t { color: var(--fg); font-weight: 600; }
+ol.refs .t a { color: inherit; text-decoration: none; }
+ol.refs .t a:hover { color: var(--link); text-decoration: underline; }
 ol.refs b { color: var(--fg); font-weight: 600; }
 ol.refs .na, ol.refs .note-inline { color: var(--muted); font-size: 13.5px; }
 ol.refs .lk { font-size: 13.5px; margin-top: 3px; }
+ol.refs .lk a.doi { overflow-wrap: anywhere; }
 ol.refs .lk a + a::before { content: " · "; color: var(--muted); }
 ol.refs .star { color: #c98a00; font-size: 14px; text-align: right; padding-top: 1px; }
 .tag { display: inline-block; font-size: 11.5px; line-height: 1; padding: 3px 6px 2px; border: 1px solid #c98a00; color: #8a5f00; border-radius: 2px; vertical-align: 1px; }

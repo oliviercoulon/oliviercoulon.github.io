@@ -290,7 +290,8 @@ def format_pub(e):
     t = pub_type(e)
     links = []
     if e.get("doi"):
-        links.append({"label": "DOI", "url": "https://doi.org/" + e["doi"]})
+        # DOI written out as a full URL (Crossref display guidelines)
+        links.append({"label": "https://doi.org/" + e["doi"], "url": "https://doi.org/" + e["doi"], "doi": True})
     if e.get("url") and not e.get("doi"):
         links.append({"label": "Link", "url": e["url"]})
     if e.get("pdf"):
@@ -311,6 +312,7 @@ def format_pub(e):
             "selected": "selected" in e.get("keywords", "").lower(), "short": short,
             "journal_short": e.get("journal") or e.get("booktitle", ""),
             "doi_url": ("https://doi.org/" + e["doi"]) if e.get("doi") else (e.get("url") or ""),
+            "main_url": links[0]["url"] if links else "",
             "search": unicodedata.normalize("NFKD", search).encode("ascii", "ignore").decode().lower(),
             "_order": e["_order"]}
 

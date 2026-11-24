@@ -43,7 +43,7 @@ themes:
       Sulcal pits, plis de passage and sulcal parameterisations give reproducible descriptors of folding
       patterns. We use them to map variability between individuals and its genetic and functional correlates.
     figure: {image: img/fig/CS-folding.png, caption: "Parameterisation of the left and right central sulcus", white: true}
-    papers: [auzias2015deep, auzias2016marsatlas, leguen2017genetic]
+    papers: [bodin2020plis, auzias2016marsatlas, leguen2017genetic]
   - title: Sulci and superficial white matter
     text: >-
       With diffusion MRI tractography we relate the shape of sulci — plis de passage, the hand knob of the

@@ -84,6 +84,8 @@ If you also edit on github.com, always `git pull` before starting, so that the t
 The publication page is generated from `content/publications.bib`. Entries are sorted by year, then by their
 order in the file, and numbered automatically (the most recent has the highest number). Your name is set in
 bold automatically, and lists of more than 12 authors are shortened (first three … Coulon O … last author).
+When an entry has a DOI, its title links to it and the DOI is written out under the reference; without a
+DOI, the title links to the `url`, `hal_id` or `pdf` given in the entry, if any.
 
 ### Adding a publication
 
