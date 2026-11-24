@@ -217,6 +217,8 @@ with the face centred in the upper part. It is shown as a grey-scale circle.
 - The repository is public: GitHub Pages serves public repositories with a free account, so everything in it
   can be read.
 - Colours and layout are in `static/css/style.css`, the page structure in `templates/`.
-- The BaboFet project site is a separate repository, published at <https://oliviercoulon.github.io/babofet/>.
+- The BaboFet project site is a separate repository, to be published at <https://oliviercoulon.github.io/babofet/>.
+  Until it is online, the three links to it are commented out in `home.yaml` (lines marked *BaboFet site not
+  online yet*): remove the `#` of those lines once the BaboFet site works.
 - `tools/import_oldsite.py` imported the publication list of the former Google Sites page on 2026-11-24.
   It is kept for reference and will not overwrite an edited `publications.bib` without `--force`.

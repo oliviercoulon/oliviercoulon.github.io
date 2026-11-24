@@ -13,7 +13,9 @@ hero:
     animation: media/folding.webp
     poster: media/folding_poster.jpg
     alt: Animated cortical surface of a fetal baboon brain folding between 92 and 155 days of gestation
-    caption: "Cortical folding of a fetal baboon brain, 92 → 155 days of gestation (left hemisphere, [BaboFet](https://oliviercoulon.github.io/babofet/))."
+    # BaboFet site not online yet: restore the linked caption below (and the two other "BaboFet site" lines) when it is.
+    # caption: "Cortical folding of a fetal baboon brain, 92 → 155 days of gestation (left hemisphere, [BaboFet](https://oliviercoulon.github.io/babofet/))."
+    caption: "Cortical folding of a fetal baboon brain, 92 → 155 days of gestation (left hemisphere, BaboFet)."
 
 about:
   title: Research
@@ -57,7 +59,8 @@ themes:
       labels: [92 d, 120 d, 155 d]
       caption: Coronal T2-weighted MRI of the same fetal baboon at three ages (BaboFet).
     papers: [dienye2026characterization, bryant2026longitudinal, leguen2017genetic]
-    link: {label: The BaboFet project →, url: "https://oliviercoulon.github.io/babofet/"}
+    # BaboFet site not online yet; remove the # below when it is.
+    # link: {label: The BaboFet project →, url: "https://oliviercoulon.github.io/babofet/"}
   - title: Comparative primate neuroimaging
     text: >-
       Brain templates, sulcal morphometry and hemispheric asymmetries in baboons and chimpanzees, as windows
@@ -74,8 +77,9 @@ projects:
       emergence of cortical folding and its tissue correlates in utero.
     role: Coordinator
     funding: ANR-23-CE37-0009 · A*Midex
-    url: "https://oliviercoulon.github.io/babofet/"
-    url_label: Project website
+    # BaboFet site not online yet; remove the # of the next two lines when it is.
+    # url: "https://oliviercoulon.github.io/babofet/"
+    # url_label: Project website
 
 software_title: Software and resources
 software:
