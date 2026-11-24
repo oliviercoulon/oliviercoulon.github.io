@@ -1,0 +1,13 @@
+# Contact page. Address, phone and e-mail come from site.yaml.
+
+title: Contact
+intro: ""
+
+legal:
+  title: About this site
+  text: |
+    Personal page of Olivier Coulon, who is responsible for its content. Hosted by GitHub Pages
+    (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).
+    This site sets no cookies, uses no analytics and loads no external resources; GitHub may keep
+    technical server logs ([GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)).
+    Content under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) unless stated otherwise.

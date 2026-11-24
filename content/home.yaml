@@ -1,0 +1,108 @@
+# Home page. Markdown is allowed in text fields; [[...]] = still to be written. Help: UPDATING.md, section 4.
+# "papers" lists BibTeX keys of content/publications.bib (shown as short references with a DOI link).
+
+hero:
+  statement: >-
+    I study the geometry and organisation of the cerebral cortex with MRI: how cortical folds vary
+    between individuals and species, how they relate to the superficial white matter beneath them,
+    and how they emerge during development.
+  buttons:
+    - {label: Publications, url: publications.html, style: solid}
+    - {label: Contact, url: contact.html, style: ""}
+  figure:
+    animation: media/folding.webp
+    poster: media/folding_poster.jpg
+    alt: Animated cortical surface of a fetal baboon brain folding between 92 and 155 days of gestation
+    caption: "Cortical folding of a fetal baboon brain, 92 → 155 days of gestation (left hemisphere, [BaboFet](https://oliviercoulon.github.io/babofet/))."
+
+about:
+  title: Research
+  text: |
+    My research is in computational anatomy of the cerebral cortex. I develop methods that describe
+    cortical folding on surface meshes — deep sulcal landmarks (sulcal pits), plis de passage, sulcal
+    parameterisation and surface-based parcellation — and use them to study inter-individual variability,
+    its genetic and functional correlates, and its relation to short-range, U-shaped white matter connectivity.
+
+    A growing part of this work concerns the development of folding, from fetal MRI in humans to
+    longitudinal in-utero imaging of the baboon brain, and comparative neuroimaging of non-human primates.
+    Developmental studies are largely performed in collaboration with
+    [Guillaume Auzias](https://www.researchgate.net/profile/G-Auzias) (INT, CNRS & AMU).
+  facts:
+    - {label: Position, text: "Research Director (DR), CNRS"}
+    - {label: Team, text: "[MeCA](https://meca-brain.org), Methods and Computational Anatomy"}
+    - {label: Institute, text: "Deputy Director, [Institut de Neurosciences de la Timone](https://int.univ-amu.fr), Marseille"}
+    - {label: Career, text: "PhD, Télécom ParisTech (1998) · Postdoc, University College London (1998–2001)"}
+    - {label: Keywords, text: "cortical folding · sulcal pits · plis de passage · superficial white matter · fetal MRI · primate neuroimaging"}
+
+themes_title: Research themes
+themes:
+  - title: Cortical folding, landmarks and variability
+    text: >-
+      Sulcal pits, plis de passage and sulcal parameterisations give reproducible descriptors of folding
+      patterns. We use them to map variability between individuals and its genetic and functional correlates.
+    figure: {image: img/fig/CS-folding.png, caption: "Parameterisation of the left and right central sulcus", white: true}
+    papers: [auzias2015deep, auzias2016marsatlas, leguen2017genetic]
+  - title: Sulci and superficial white matter
+    text: >-
+      With diffusion MRI tractography we relate the shape of sulci — plis de passage, the hand knob of the
+      central sulcus — to the organisation of the short U-shaped fibres that run beneath them.
+    figure: {image: img/fig/saf-folding.png, caption: "Short U-shaped fibres around the central sulcus, and a map of their density along the sulcal wall", white: true}
+    papers: [pron2020shape, bodin2020plis, song2022ensemble]
+  - title: Development of cortical folding
+    text: >-
+      From fetal MRI in humans to longitudinal in-utero imaging of the baboon, we study when and where
+      folds appear, and the tissue changes in the developing cortex that precede them.
+    figure:
+      strip: [img/fig/t2cor_sub-Bibi_ses-01.png, img/fig/t2cor_sub-Bibi_ses-05.png, img/fig/t2cor_sub-Bibi_ses-10.png]
+      labels: [92 d, 120 d, 155 d]
+      caption: Coronal T2-weighted MRI of the same fetal baboon at three ages (BaboFet).
+    papers: [dienye2026characterization, bryant2026longitudinal, leguen2017genetic]
+    link: {label: The BaboFet project →, url: "https://oliviercoulon.github.io/babofet/"}
+  - title: Comparative primate neuroimaging
+    text: >-
+      Brain templates, sulcal morphometry and hemispheric asymmetries in baboons and chimpanzees, as windows
+      on brain evolution and on the anatomical bases of communication and handedness.
+    figure: {image: img/fig/CS-primate.png, caption: "Mean depth profile of the central sulcus in ten primate species (Hopkins et al. 2014)", white: true}
+    papers: [love2016average, becker2024planum, hopkins2017genetic]
+
+projects_title: Current projects
+projects:
+  - name: BaboFet
+    logo: img/logos/babofet.png
+    text: >-
+      A longitudinal fetal MRI database of the baboon brain with high temporal resolution, to follow the
+      emergence of cortical folding and its tissue correlates in utero.
+    role: Coordinator
+    funding: ANR-23-CE37-0009 · A*Midex
+    url: "https://oliviercoulon.github.io/babofet/"
+    url_label: Project website
+
+software_title: Software and resources
+software:
+  - name: Macapype
+    what: Open multi-software pipeline for anatomical MRI of non-human primates
+    papers: [meunier2026macapype]
+    url: "https://github.com/Macatools/macapype"
+  - name: MarsAtlas
+    what: Cortical parcellation model for functional mapping
+    papers: [auzias2016marsatlas]
+    url: "https://meca-brain.org/software/marsatlas/"
+  - name: HIP-HOP
+    what: Model-driven harmonic parameterisation of the cortical surface (BrainVISA)
+    papers: [auzias2013model]
+    url: "https://brainvisa.info"
+  - name: Haiko89
+    what: Adult baboon brain MRI template and tissue probability maps (89 individuals)
+    papers: [love2016average]
+    url: "https://www.nitrc.org/projects/haiko89/"
+  - name: BaBa21
+    what: Longitudinal baboon brain MRI templates, from birth to adolescence
+    papers: [bryant2026longitudinal]
+    url: "https://openneuro.org/datasets/ds005424"
+  - name: BaboFet pipelines
+    what: Processing of fetal baboon T2-weighted and diffusion MRI
+    papers: []
+    url: "https://github.com/MecaLab"
+
+recent_title: Recent publications
+recent_count: 5

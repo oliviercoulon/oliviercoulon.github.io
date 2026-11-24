@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} — {{ site.name }}{% else %}{{ site.name }} — {{ site.role }}{% endif %}</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="{{ site.name }}">
+<meta property="og:title" content="{{ page_title or site.name }}">
+<meta property="og:description" content="{{ site.description }}">
+<meta property="og:url" content="{{ site.url.rstrip('/') }}/{{ page }}.html">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-name">{{ site.name }}</span></a>
+  <span class="brand-sub">{{ site.role }} · INT, Marseille</span>
+  <nav class="nav" id="nav">
+    {% for item in site.nav %}<a href="{{ item.page }}.html"{% if item.page == page %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+  </nav>
+  <button class="burger" aria-label="Menu" aria-controls="nav" aria-expanded="false"><span></span></button>
+</div></header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="top">
+    <div class="addr">
+      <div class="k">{{ site.name }}</div>
+      {% for l in site.address %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+    </div>
+    <div class="logos">
+      {% for i in site.institutions %}<a href="{{ i.url }}"><img{% if i.wide %} class="wide"{% endif %} src="{{ i.logo }}" alt="{{ i.name }}"></a>{% endfor %}
+    </div>
+  </div>
+  <div class="bottom">
+    <div><a class="mail" data-u="{{ site.email.user }}" data-d="{{ site.email.domain }}" href="contact.html">E-mail</a><span class="sep">·</span>{% for p in site.profiles if not p.url is placeholder %}<a href="{{ p.url }}">{{ p.label }}</a>{% if not loop.last %}<span class="sep">·</span>{% endif %}{% endfor %}</div>
+    <div><a href="contact.html#about-site">About this site</a><span class="sep">·</span>Last update {{ build_date }}</div>
+  </div>
+</div></footer>
+<script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="title-block"><div class="wrap">
+  <h1>{{ c.title }}</h1>
+  {% if c.intro %}<p class="lead">{{ c.intro | inline }}</p>{% endif %}
+</div></section>
+
+<div class="wrap">
+  <section class="contact">
+    <div class="card">
+      <h2>Address</h2>
+      <table class="facts">
+        <tr><th>E-mail</th><td><a class="mail full" data-u="{{ site.email.user }}" data-d="{{ site.email.domain }}" href="#">{{ site.email.user }} [at] {{ site.email.domain }}</a></td></tr>
+        <tr><th>Phone</th><td>{{ site.phone }}</td></tr>
+        <tr><th>Postal address</th><td>{{ site.name }}<br>{% for l in site.address %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}<div class="map"><a href="{{ site.map }}">Map (OpenStreetMap) ↗</a></div></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Profiles</h2>
+      <ul class="profile-list">
+        {% for p in site.profiles %}<li><span class="lbl">{{ p.label }}</span>{% if p.url is placeholder %}<span class="ph">{{ p.url[2:-2] }}</span>{% else %}<a href="{{ p.url }}">{{ p.url | replace('https://', '') | replace('www.', '') }}</a>{% endif %}</li>{% endfor %}
+        <li><span class="lbl">Team</span><a href="https://meca-brain.org">meca-brain.org</a></li>
+        <li><span class="lbl">Institute</span><a href="https://int.univ-amu.fr">int.univ-amu.fr</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section legal" id="about-site">
+    <h2 class="h2">{{ c.legal.title }}</h2>
+    <div class="prose">{{ c.legal.text | md }}</div>
+  </section>
+</div>
+{% endblock %}

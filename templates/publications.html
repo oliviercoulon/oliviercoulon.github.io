@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="title-block"><div class="wrap">
+  <h1>Publications</h1>
+  <p class="lead">Peer-reviewed articles, conference papers and book chapters, by year ({{ pubs | length }} items, {{ years[-1] }}–{{ years[0] }}). Conference abstracts are not listed.</p>
+  <p class="byline">Also on {% for p in site.profiles if p.label in ('Google Scholar', 'HAL', 'ORCID') %}{% if p.url is placeholder %}<span class="ph">{{ p.label }}</span>{% else %}<a href="{{ p.url }}">{{ p.label }}</a>{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+</div></section>
+
+<section class="section pubs"><div class="wrap">
+  <div class="pub-tools">
+    <input class="input" id="pub-search" type="search" placeholder="Search title, author, journal…" aria-label="Search publications">
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" class="on" data-filter="all">All <span class="n">{{ pubs | length }}</span></button>
+      <button type="button" data-filter="selected">★ Selected <span class="n">{{ n_selected }}</span></button>
+    </div>
+    <a class="bib" href="publications.bib" download>BibTeX ↓</a>
+  </div>
+  <nav class="years" aria-label="Jump to year">{% for y in years %}<a href="#y{{ y }}">{{ y }}</a>{% endfor %}</nav>
+  <p class="count muted" id="pub-count" aria-live="polite"></p>
+  {% for y, list in by_year %}<div class="year-group" id="y{{ y }}">
+    <div class="year">{{ y }} <small>{{ list | length }}</small></div>
+    <ol class="refs">{% for p in list %}{% include "_ref.html" %}{% endfor %}</ol>
+  </div>{% endfor %}
+</div></section>
+{% endblock %}

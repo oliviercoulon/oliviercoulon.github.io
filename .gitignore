@@ -1,0 +1,7 @@
+# build output (rebuilt by GitHub Actions)
+_site/
+.doi_cache.json
+tools/.crossref_cache.json
+.DS_Store
+__pycache__/
+.venv/

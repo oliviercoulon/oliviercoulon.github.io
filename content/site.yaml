@@ -1,0 +1,39 @@
+# Identity, menu and contact details, used on every page.
+# Text fields accept Markdown links [text](url). [[...]] = still to be written (shown in yellow). Help: UPDATING.md
+
+name: Olivier Coulon
+role: Research Director, CNRS
+affiliation: "[Institut de Neurosciences de la Timone](https://int.univ-amu.fr) (INT), CNRS & Aix-Marseille Université, Marseille, France"
+team: "[MeCA](https://meca-brain.org) team — Methods and Computational Anatomy"
+url: https://oliviercoulon.github.io/
+description: >-
+  Olivier Coulon, CNRS research director at the Institut de Neurosciences de la Timone (Marseille):
+  computational anatomy of the cerebral cortex, cortical folding, superficial white matter,
+  brain development and primate neuroimaging.
+
+nav:
+  - {page: index, label: Home}
+  - {page: publications, label: Publications}
+  - {page: contact, label: Contact}
+
+# The e-mail address is assembled in the browser (spam protection) and never written in full in the HTML.
+email: {user: olivier.coulon, domain: univ-amu.fr}
+phone: "+33 (0)4 91 32 40 59"
+address:
+  - Institut de Neurosciences de la Timone
+  - Faculté de Médecine, Campus Timone
+  - 27 boulevard Jean Moulin
+  - 13005 Marseille, France
+map: https://www.openstreetmap.org/search?query=27%20boulevard%20Jean%20Moulin%2C%20Marseille
+
+# Profile links. Leave url as [[...]] until known; the link is then shown as a placeholder.
+profiles:
+  - {label: Google Scholar, url: "https://scholar.google.com/citations?user=Tg8q9QgAAAAJ"}
+  - {label: ORCID, url: "https://orcid.org/0000-0003-4752-1228"}
+  - {label: HAL, url: "https://cv.hal.science/olivier-coulon"}
+  - {label: GitHub, url: "https://github.com/oliviercoulon"}
+
+institutions:
+  - {name: CNRS, logo: img/logos/cnrs.png, url: "https://www.cnrs.fr"}
+  - {name: Aix-Marseille Université, logo: img/logos/amu.png, url: "https://www.univ-amu.fr", wide: true}
+  - {name: Institut de Neurosciences de la Timone, logo: img/logos/int.png, url: "https://int.univ-amu.fr"}

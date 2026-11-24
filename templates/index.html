@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% macro shortref(p) %}<a href="{{ p.doi_url or 'publications.html' }}" class="sref"><span>{{ p.short }}</span> <i>{{ p.journal_short }}</i></a>{% endmacro %}
+{% block content %}
+<section class="hero"><div class="wrap hero-grid">
+  <img class="portrait" src="img/portrait.jpg" alt="Portrait of {{ site.name }}">
+  <div class="hero-text">
+    <h1>{{ site.name }}</h1>
+    <p class="role">{{ site.role }}</p>
+    <p class="aff">{{ site.affiliation | inline }}<br>{{ site.team | inline }}</p>
+    <p class="statement">{{ c.hero.statement }}</p>
+    <div class="hero-links">
+      {% for b in c.hero.buttons %}<a class="btn {{ b.style }}" href="{{ b.url }}">{{ b.label }}</a>{% endfor %}
+      <span class="profiles">{% for p in site.profiles %}<span>{% if p.url is placeholder %}<span class="ph">{{ p.label }}</span>{% else %}<a href="{{ p.url }}">{{ p.label }}</a>{% endif %}</span>{% endfor %}</span>
+    </div>
+  </div>
+  <figure class="hero-fig">
+    <picture><source media="(prefers-reduced-motion: reduce)" srcset="{{ c.hero.figure.poster }}"><img src="{{ c.hero.figure.animation }}" alt="{{ c.hero.figure.alt }}"></picture>
+    <figcaption>{{ c.hero.figure.caption | inline }}</figcaption>
+  </figure>
+</div></section>
+
+<div class="wrap">
+  <section class="intro">
+    <div>
+      <h2>{{ c.about.title }}</h2>
+      {{ c.about.text | md }}
+    </div>
+    <aside>
+      {% for f in c.about.facts %}<div><b>{{ f.label }}</b>{{ f.text | inline }}</div>{% endfor %}
+    </aside>
+  </section>
+
+  <section class="section">
+    <h2 class="h2">{{ c.themes_title }}</h2>
+    <div class="themes">
+      {% for th in c.themes %}<article class="theme">
+        <div class="fig{% if th.figure.placeholder and not th.figure.image %} empty{% endif %}{% if th.figure.white %} white{% endif %}"{% if th.figure.caption %} title="{{ th.figure.caption }}"{% endif %}>
+          {% if th.figure.strip %}<div class="mini-strip">{% for s in th.figure.strip %}<div><img src="{{ s }}" alt="Coronal T2 MRI, {{ th.figure.labels[loop.index0] }}"><span>{{ th.figure.labels[loop.index0] }}</span></div>{% endfor %}</div>
+          {% elif th.figure.image %}<a class="one" href="{{ th.figure.image }}"><img class="one" src="{{ th.figure.image }}" alt="{{ th.figure.caption or th.title }}"></a>
+          {% elif th.figure.placeholder %}<span class="ph-fig">{{ th.figure.placeholder }}</span>{% endif %}
+        </div>
+        <div class="body">
+          <h3>{{ th.title }}</h3>
+          <p>{{ th.text | inline }}</p>
+          {% if th.refs %}<div class="key">Key papers</div><ul class="srefs">{% for p in th.refs %}<li>{{ shortref(p) }}</li>{% endfor %}</ul>{% endif %}
+          {% if th.link %}<a class="more" href="{{ th.link.url }}">{{ th.link.label }}</a>{% endif %}
+        </div>
+      </article>{% endfor %}
+    </div>
+  </section>
+
+  <section class="section grid-2">
+    <div>
+      <h2 class="h2">{{ c.projects_title }}</h2>
+      {% for pr in c.projects %}<div class="project">
+        {% if pr.logo %}<img src="{{ pr.logo }}" alt="">{% else %}<div class="logo-ph"></div>{% endif %}
+        <div>
+          <h3>{{ pr.name | inline }}</h3>
+          <p>{{ pr.text | inline }}</p>
+          <div class="meta"><span>{{ pr.role | inline }}</span><span>{{ pr.funding | inline }}</span></div>{% if pr.url %}<a class="more" href="{{ pr.url }}">{{ pr.url_label }} →</a>{% endif %}
+        </div>
+      </div>{% endfor %}
+    </div>
+    <div>
+      <h2 class="h2">{{ c.software_title }}</h2>
+      <table class="bt sw">
+        {% for s in c.software %}<tr>
+          <td class="name">{% if s.url is placeholder %}{{ s.name }} <span class="ph">link</span>{% else %}<a href="{{ s.url }}">{{ s.name }}</a>{% endif %}</td>
+          <td>{{ s.what }}{% if s.refs %}<div class="refs-mini">{% for p in s.refs %}{{ shortref(p) }}{% if not loop.last %}; {% endif %}{% endfor %}</div>{% endif %}</td>
+        </tr>{% endfor %}
+      </table>
+    </div>
+  </section>
+
+  <section class="section latest">
+    <h2 class="h2 split">{{ c.recent_title }} <a href="publications.html">All {{ n_pubs }} publications →</a></h2>
+    <ol class="refs">{% for p in recent %}{% include "_ref.html" %}{% endfor %}</ol>
+  </section>
+</div>
+{% endblock %}
